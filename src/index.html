@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Implantação de Novas Operadoras</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <script src="/js/jquery.js" defer type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+</head>
+<body>
+    <h1>Formulário de Implantação de Novas Operadoras</h1>
+    <form id="fino">
+        <fieldset>
+            <div id="dadosiniciais">
+                <div class="logo-adm inactive" id="mounthermon">
+                    <img src="../logo-adm/mounthermon.svg" alt="Logo da MountHermon">
+                </div>
+                
+                <div class="logo-adm inactive" id="compar">
+                    <img src="../logo-adm/compar.svg" alt="Logo da Compar">
+                </div>
+                
+                <div class="logo-adm inactive" id="classe">
+                    <img src="../logo-adm/classe.svg" alt="Logo da Classe Administradora">
+                </div>
+
+                <div class="input-wrapper" id="adm">
+                    <label for="administradora">Administradora</label>
+                    <select name="administradora" id="administradora" required>
+                        <option value="" disabled selected hidden>Selecione a administradora</option>
+                        <option value="../logo-adm/mounthermon.svg">Mount Hermon</option>
+                        <option value="../logo-adm/compar.svg">Compar</option>
+                        <option value="../logo-adm/classe.svg">Classe Administradora</option>
+                    </select>
+                </div>
+
+                <div class="input-wrapper" id="est">
+                    <label for="estipulante">Estipulante</label>
+                    <select name="estipulante" id="estipulante" required>
+                        <option value="" disabled selected hidden>Selecione uma opção</option>
+                        <option value="Estipulante">Estipulante</option>
+                        <option value="Subestipulante">Subestipulante</option>
+                    </select>
+                </div>
+            </div>
+            <div class="fieldset-wrapper">
+                <legend>identificação da operadora</legend>
+                <table id="operadora">
+                    <tr>
+                        <td colspan="2">
+                            <div class="input-wrapper">
+                                <label for="razaosocial">Razão social</label>
+                                <input 
+                                type="text" 
+                                name="razaosocial" 
+                                id="razaosocial"
+                                required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="cnpj">CNPJ</label>
+                                <input 
+                                type="text" 
+                                name="cnpj" 
+                                id="cnpj"
+                                required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="input-wrapper">
+                                <label for="nomefantasia">Nome fantasia</label>
+                                <input 
+                                type="text" 
+                                name="nomefantasia" 
+                                id="nomefantasia"
+                                required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="ans">Cód. ANS</label>
+                                <input 
+                                type="text" 
+                                name="ans" 
+                                id="ans"
+                                required>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="endereco">Endereço físico</label>
+                                <input 
+                                type="text" 
+                                name="endereco" 
+                                id="endereco"
+                                required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="numeroendereco">Número</label>
+                                <input 
+                                type="number" 
+                                name="numeroendereco" 
+                                id="numeroendereco"
+                                required>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="complementoendereco">Complemento</label>
+                                <input 
+                                type="text" 
+                                name="complementoendereco" 
+                                id="complementoendereco">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-wrapper">Cidade</label>
+                                <input 
+                                type="text" 
+                                name="cidade" 
+                                id="cidade"
+                                required>
+                            </div>
+                        </td>
+        
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="cep">CEP</label>
+                                <input 
+                                type="text" 
+                                name="cep" 
+                                id="cep"
+                                required>
+                            </div>
+                        </td>
+        
+                        <td>
+                            <div class="input-wrapper">
+                                <label for="estado">UF</label>
+                                <select name="estado" id="estado" required>
+                                    <option value="" disabled selected hidden>UF</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">
+                            <div class="input-wrapper">
+                                <label for="site">Endereço Web</label>
+                                <input 
+                                type="text" 
+                                name="site" 
+                                id="site" placeholder="https://site.com.br"
+                                required>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 40%;">
+                            <div class="input-wrapper">
+                                <label for="atendimento">Tel. Atendimento</label>
+                                <input 
+                                type="text" 
+                                name="atendimento" 
+                                id="atendimento"
+                                required>
+                            </div>
+                        </td>
+
+                        <td></td>
+
+                        <td style="width: 40%;">
+                            <div class="input-wrapper">
+                                <label for="ouvidoria">Tel. Ouvidoria</label>
+                                <input 
+                                type="text" 
+                                name="ouvidoria" 
+                                id="ouvidoria"
+                                required>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+
+        <fieldset id="planos" name="dadosPlanos">
+            <input type="hidden" name="counterPlanos" class="counterPlanos" for="idPlano" value='1'>
+            <legend>planos para comercialização</legend>
+            <table class="plano" id="plano-1">
+                <input type="hidden" name="idPlano" class="idPlano" for="idPlano" value="plano-1">
+                <thead>
+                    <tr>
+                        <th colspan="6">
+                            <div class="input-wrapper">
+                                <label for="nomeplano">Nome do Plano</label>
+                                <input 
+                                type="text" 
+                                name="nomeplano" 
+                                id="nomeplano"
+                                placeholder="Nome do plano"
+                                required>
+                            </div>
+                        </th>
+                        <th colspan="2">
+                            <div class="input-wrapper">
+                                <label for="ansplano">ANS</label>
+                                <input 
+                                type="text" 
+                                name="ansplano" 
+                                id="ansplano"
+                                required>
+                            </div>
+                        </th>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2">
+                            <div class="input-wrapper">
+                                <label for="contratoplano">Contratação</label>
+                                <select name="contratoplano" id="contratoplano" required>
+                                    <option value="" disabled selected hidden>Selecionar</option>
+                                    <option value="Individual">Individual ou familiar</option>
+                                    <option value="Empresarial">Coletivo empresarial</option>
+                                    <option value="Adesão">Coletivo por adesão</option>
+                                </select>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="cooparticipacao">Cooparticipação</label>
+                                <select name="cooparticipacao" id="cooparticipacao" required>
+                                    <option value="" disabled selected hidden>Selecionar</option>
+                                    <option value="Com Cooparticipação">Com Cooparticipação</option>
+                                    <option value="Sem cooparticipação">Sem Cooparticipação</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="input-wrapper">
+                                <label for="coberturaplano">Cobertura</label>
+                                <select name="coberturaplano" id="coberturaplano" required>
+                                    <option value="" disabled selected hidden>Selecionar</option>
+                                    <option value="Ambulatorial">Ambulatorial</option>
+                                    <option value="Ambulatorial + Hospitalar COM obstetrícia">Ambulatorial + Hospitalar COM obstetrícia</option>
+                                    <option value="Ambulatorial + Hospitalar COM obstetrícia + Odontológico">Ambulatorial + Hospitalar COM obstetrícia + Odontológico</option>
+                                    <option value="Ambulatorial + Hospitalar SEM obstetrícia">Ambulatorial + Hospitalar SEM obstetrícia</option>
+                                    <option value="Ambulatorial + Hospitalar SEM obstetrícia + Odontológico">Ambulatorial + Hospitalar SEM obstetrícia + Odontológico</option>
+                                    <option value="Ambulatorial + Odontológico">Ambulatorial + Odontológico</option>
+                                    <option value="Hospitalar COM obstetrícia">Hospitalar COM obstetrícia</option>
+                                    <option value="Hospitalar COM obstetrícia + Odontológico">Hospitalar COM obstetrícia + Odontológico</option>
+                                    <option value="Hospitalar SEM obstetrícia">Hospitalar SEM obstetrícia</option>
+                                    <option value="Hospitalar SEM obstetrícia + Odontológico">Hospitalar SEM obstetrícia + Odontológico</option>
+                                    <option value="Odontológico">Odontológico</option>
+                                </select>
+                            </div>
+    
+                            <div class="acomodacao">
+                                <label for="acomodacaoplano">Acomodação</label>
+                                <select name="acomodacaoplano" id="acomodacaoplano" required>
+                                    <option value="" disabled selected hidden>Selecionar</option>
+                                    <option value="Enfermaria">Enfermaria</option>
+                                    <option value="Apartamento">Apartamento</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="input-wrapper">
+                                <label for="abrangenciaplano">Abrangência</label>
+                                <select name="abrangenciaplano" id="abrangenciaplano" required>
+                                    <option value="" disabled selected hidden>Selecionar</option>
+                                    <option value="Nacional">Nacional</option>
+                                    <option value="Grupo de estados">Grupo de estados</option>
+                                    <option value="Estadual">Estadual</option>
+                                    <option value="Grupo de municípios">Grupo de municípios</option>
+                                    <option value="Municipal">Municipal</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="100%">
+                            <h3>área de Abrangência</h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="100%" style="padding-top: .5rem;">
+                            <textarea name="areaabrangencia" id="areaabrangencia" style="width: 100%; height: 5rem; resize: vertical;" placeholder="Insira as localidades (se não se aplicar, deixe em branco)"></textarea>
+                        </td>
+                    </tr>
+                </thead>
+    
+                <tbody class="tabelaProcedimentos" id="Procedimentos-1">
+                    <tr>
+                        <th scope="col" colspan="100%">
+                            <h3>procedimentos</h3>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col" colspan="1">
+                            <h2>Descrição dos procedimentos</h2>
+                        </th>
+                        <th scope="col" colspan="3">
+                            <h2>Coparticipação</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Limite Carência (dias)</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Redução de carências</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Congêneres</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Excluir</h2>
+                        </th>
+                    </tr>
+
+                    <tr class="procedimento">
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <div class="hide" id="idPlano" value=""></div>
+                            <textarea name="procedimentodescricao" id="procedimentodescricao" required></textarea>
+                        </td>
+
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <input 
+                            type="number" 
+                            name="procedimentocopay" 
+                            id="procedimentocopay"
+                            placeholder="Valor (%)"
+                            required>
+                        </td>
+
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <label for="limite" class="inactive">Limite</label>
+                            <input 
+                            type="number" 
+                            name="procedimentolimitecopay" 
+                            id="procedimentolimitecopay"
+                            placeholder="Limite (R$)"
+                            required>
+                        </td>
+
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <label for="franquia" class="inactive">Franquia</label>
+                            <input 
+                            type="text" 
+                            name="procedimentofranquiacopay" 
+                            id="procedimentofranquiacopay"
+                            placeholder="Franquia (R$)"
+                            title="Caso não haja, deixe em branco ou preencha com '0'"
+                            required>
+                        </td>
+
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <input 
+                                type="number" 
+                                name="procedimentolimitecarencia" 
+                                id="procedimentolimitecarencia"
+                                required>
+                        </td>
+
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <textarea name="procedimentoreducaocarencia" id="procedimentoreducaocarencia" placeholder="Condições de redução..."></textarea>
+                        </td>
+
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <textarea name="procedimentocongenere" id="procedimentocongenere" placeholder="Condições de congêneres..."></textarea>
+                        </td>
+                        <td colspan="1" style="padding-top: .5rem;">
+                            <div class="button-remove" title="Remover procedimento(s)"
+                            style="margin: auto;">&times</div>
+                        </td>
+                    </tbody>
+                    <tbody>    
+                    </tr>
+                    </div>
+
+                    <tr>
+                        <td colspan="100%">
+                            <div class="novoprocedimento">
+                                <button class="button-add" id="pitico" type="button"> + </button>
+                                <p>Adicionar procedimento</p>
+                            </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </div>
+
+                    <tr>
+                        <td scope="col" colspan="100%">
+                            <h3>dependentes</h3>
+                        </td>
+                    </tr>
+
+                    <tr class="dependentes">
+                        <th scope="col" colspan="2"><h2>Parentesco</h2></th>
+                        <th scope="col" colspan="3"><h2>Condições</h2></th>
+                        <th scope="col" colspan="3"><h2>Documentos</h2></th>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="padding-top: .5rem;">
+                            <h2>
+                                Cônjuges
+                            </h2>
+                        </td>
+
+                        <td colspan="3" style="padding-top: .5rem;">
+                            <input 
+                            type="text" 
+                            name="condicoesdependentes_conjuge" 
+                            id="condicoesdependentes_conjuge"
+                            placeholder="Condições"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+
+                        <td colspan="3" style="padding-top: .5rem;">
+                            <input 
+                            type="text" 
+                            name="documentosdependentes_conjuge" 
+                            id="documentosdependentes_conjuge"
+                            placeholder="Documentos"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <h2>
+                                Filhos
+                            </h2>
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="condicoesdependentes_filhos" 
+                            id="condicoesdependentes_filhos"
+                            placeholder="Condições"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="documentosdependentes_filhos" 
+                            id="documentosdependentes_filhos"
+                            placeholder="Documentos"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <h2>
+                                Netos
+                            </h2>
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="condicoesdependentes_netos" 
+                            id="condicoesdependentes_netos"
+                            placeholder="Condições"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="documentosdependentes_netos" 
+                            id="documentosdependentes_netos"
+                            placeholder="Documentos"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <h2>
+                                Pais
+                            </h2>
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="condicoesdependentes_pais" 
+                            id="condicoesdependentes_pais"
+                            placeholder="Condições"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="documentosdependentes_pais" 
+                            id="documentosdependentes_pais"
+                            placeholder="Documentos"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <h2>
+                                Outros
+                            </h2>
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="condicoesdependentes_outros" 
+                            id="condicoesdependentes_outros"
+                            placeholder="Condições"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+
+                        <td colspan="3">
+                            <input 
+                            type="text" 
+                            name="documentosdependentes_outros" 
+                            id="documentosdependentes_outros"
+                            placeholder="Documentos"
+                            title="Caso não haja, deixe em branco."
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="col" colspan="100%">
+                            <h3>
+                                tabela de preços
+                            </h3>
+                        </th>
+                    </tr>
+
+                    <tr class="tabelaprecos">
+                        <th scope="col" colspan="4">
+                            <h2>
+                                Faixa etária
+                            </h2>
+                        </th>
+
+                        <th scope="col" colspan="4">
+                            <h2>
+                                Valor (%)
+                            </h2>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                00-18
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria1" 
+                            id="fxetaria1"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                19-23
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria2" 
+                            id="fxetaria2"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                24-28
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria3" 
+                            id="fxetaria3"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                29-33
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria4" 
+                            id="fxetaria4"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                34-38
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria5" 
+                            id="fxetaria5"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                39-43
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria6" 
+                            id="fxetaria6"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                44-48
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria7" 
+                            id="fxetaria7"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                49-53
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria8" 
+                            id="fxetaria8"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                54-58
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria9" 
+                            id="fxetaria9"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <h2>
+                                59+
+                            </h2>
+                        </td>
+                        <td colspan="4">
+                            <input 
+                            type="number" 
+                            name="fxetaria10" 
+                            id="fxetaria10"
+                            >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="100%">
+                            <h3>Observações sobre o plano</h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="100%" style="padding-top: .5rem;">
+                            <textarea name="planoobs" id="planoobs" style="width: 100%; height: 5rem; resize: vertical;" placeholder="Escreva aqui..."></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">
+                            <div class="duplicarplano" style="margin-top: 2rem;">
+                                <button type="button" id="duplicarPlano" class="button-duplicar" title="Duplicar plano" data-plano-id="plano-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                                </button>
+                                <p>Duplicar este plano</p>
+                            </div>
+                        </td>
+
+                        <td colspan="4">
+                            <div class="excluirplano" id="excluirplano" style="margin-top: 2rem;">
+                                <button type="button" class="button-remove-plano" id="button-remove-plano" title="Remover plano">&times</button>
+                                <p>
+                                    Excluir este plano
+                                </p>
+                            </div>
+                        </td>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+            
+        </fieldset>
+        <div class="novalinha" id="add-plano">
+            <button class="button-add" id="button-add-planos" type="button">+</button>
+            <p>Adicionar plano</p>
+        </div>
+
+        <fieldset id="entidades">
+            <legend>Entidades aprovadas</legend>
+            <table class="entidades" data-table-id="entidades">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="1">
+                            <h2>Nome</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Descrição</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Público-alvo</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Documentos necessários</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Valor associativo</h2>
+                        </th>
+                        <th scope="col" colspan="1">
+                            <h2>Excluir</h2>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="1">
+                            <select name="nomeentidade" 
+                            id="nomeentidade">
+                                <option value="" disabled selected hidden>Selecione a entidade</option>
+                                <option value="ABRAER">ABRAER - Associacao Brasileira dos Estudantes do Ensino Regular</option>
+                                <option value="ABRAPPPE">ABRAPPPE - Associação dos Profissionais Provedores do Protocolo Pediasuit</option>
+                                <option value="IBEES">IBEES - Instituto Brasileiro dos Estudantes do Ensino Superior</option>
+                                <option value="INCAPEB">INCAPEB - Cabeleireiros e Profissionais da Estética e Beleza</option>
+                                <option value="INFAP">INFAP - Instituto de Formação e Ação em Políticas Sociais para a Cidadania</option>
+                                <option value="ANACAV">ANACAV - Associação Nacional Do Comércio Atacadista E Varejista</option>
+                                <option value="Outra">Outra</option>
+                            </select>
+
+
+                            <input 
+                            type="text"
+                            name="outraentidade"
+                            id="outraentidade"
+                            class="inactive"
+                            placeholder="Insira o nome da entidade"
+                            style="margin-top: .5rem;"
+                            >
+                        </td>
+                        <td colspan="1">
+                            <input 
+                            type="text" 
+                            name="descricaoentidade" 
+                            id="descricaoentidade"
+                            required>
+                        </td>
+                        <td colspan="1">
+                            <input 
+                            type="text" 
+                            name="publicoentidade" 
+                            id="publicoentidade"
+                            class="first"
+                            required>
+                        </td>
+                        <td colspan="1">
+                            <textarea
+                            name="documentosentidade"
+                            id="documentosentidade"
+                            style="resize: vertical; width: 100%; height: 5rem;"
+                            required></textarea>
+                        </td>
+                        <td colspan="1">
+                            <input 
+                            type="text"
+                            name="taxaentidade"
+                            id="taxaentidade"
+                            required>
+                        </td>
+                        <td colspan="1">
+                            <div class="button-remove" title="Remover entidade"
+                            style="margin: auto;" id="removerentidade">&times</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="novalinha">
+                <button class="button-add" id="button-add-entidade" type="button"> + </button>
+                <p>adicionar entidade</p>
+            </div>
+        </fieldset>
+
+        <fieldset id="negociacoes">
+            <legend>condições comerciais</legend>
+            <table id="condicoescomerciais">
+                <tr>
+                    <td><h2>Negociações aprovadas</h2></td>
+                    <td><h2>Valor</h2></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="negspread" id="negspread" value="Não">
+                            <label for="negspread">Spread</label>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" name="spreadvalor" id="spreadvalor" placeholder="%">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="negcomissao" id="negcomissao" value="Não">
+                            <label for="negcomissao">Comissão</label>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" name="comissaovalor" id="comissaovalor" placeholder="%">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="negagenciamento" id="negagenciamento" value="Não">
+                            <label for="negagenciamento">Agenciamento</label>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" name="agenciamentovalor" id="agenciamentovalor" placeholder="%">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="text" name="negoutro" id="negoutro" placeholder="Outra (especificar)" title="Se não houver, deixar em branco.">
+                    </td>
+                    <td>
+                        <input type="number" name="negoutrovalor" id="negoutrovalor" placeholder="%">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="100%" style="padding-top: .25rem;">
+                        <div class="input-wrapper">
+                            <textarea name="negobs" id="negobs" placeholder="Observações..." rows="4" style="resize: vertical;"></textarea>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <fieldset id="vigencias">
+            <legend>vigências</legend>
+            <table class="vigencias" data-table-id="vigencias">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <h2>Início da Vigência</h2>
+                        </th>
+                        <th scope="col">
+                            <h2>Movimentação</h2>
+                        </th>
+                        <th scope="col">
+                            <h2>Data do faturamento</h2>
+                        </th>
+                        <th scope="col">
+                            <h2>Aniversário do contrato</h2>
+                        </th>
+                        <th scope="col" colspan="10%">
+                            <h2>Excluir</h2>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <input 
+                            type="number" 
+                            name="newsales" 
+                            id="newsales"
+                            min="1"
+                            max="31"
+                            placeholder="Dia do mês (número)"
+                            required>
+                        </td>
+
+                        <td>
+                            <input 
+                            type="number" 
+                            name="cancel" 
+                            id="cancel"
+                            class="first"
+                            min="1"
+                            max="31"
+                            placeholder="Dia do mês (número)"
+                            required>
+                        </td>
+
+                        <td>
+                            <input 
+                            type="number" 
+                            name="faturamento" 
+                            id="faturamento"
+                            class="first"
+                            min="1"
+                            max="31"
+                            placeholder="Dia do mês (número)"
+                            required>
+                        </td>
+
+                        <td>
+                            <input 
+                            type="text" 
+                            name="birthday" 
+                            id="birthday"
+                            class="first"
+                            placeholder="Dia e mês do ano"
+                            required>
+                        </td>
+
+                        <td colspan="10%">
+                            <div class="button-remove" title="Remover vigência"
+                            style="margin: auto;">&times</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="novalinha">
+                <div class="button-add" id="button-add-vigencia" title="Adicionar entidade">+</div>
+                <p>adicionar vigência</p>
+            </div>
+        </fieldset>
+
+        <fieldset id="documentos">
+            <legend>documentação</legend>
+            <div class="input-wrapper">
+                <h2>A operadora requisitou a documentação para análise de propostas?</h2>
+                <div class="radio-wrapper">
+                    <input type="radio" name="docoperadora" id="pediudocs"  value="Sim" checked>
+                    <label for="pediudocs">Sim</label>
+                </div>
+                <div class="radio-wrapper">
+                    <input type="radio" name="docoperadora" id="naopediudocs" value="Não" >
+                    <label for="naopediudocs">Não</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="contact">
+            <legend>contato da operadora</legend>
+            <table class="contato" data-table-id="contato">
+                <tr>
+                    <th>
+                        <h2>Nome completo</h2>
+                    </th>
+                    <th>
+                        <h2>E-mail</h2>
+                    </th>
+                    <th>
+                        <h2>Tel./Whatsapp</h2>
+                    </th>
+                    <th>
+                        <h2>Cargo</h2>
+                    </th>
+                    <th>
+                        <h2>Excluir</h2>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input 
+                        type="text" 
+                        name="nomecontato" 
+                        id="nomecontato"
+                        required>
+                    </td>
+                    <td>
+                        <input 
+                        type="email" 
+                        name="emailcontato" 
+                        id="emailcontato"
+                        required>
+                    </td>
+                    <td>
+                        <input 
+                        type="text" 
+                        name="telcontato" 
+                        id="telcontato"
+                        required>
+                    </td>
+                    <td>
+                        <input 
+                        type="text" 
+                        name="rolecontato" 
+                        id="rolecontato"
+                        class="first"
+                        required>
+                    </td>
+                    <td>
+                        <div class="button-remove" title="Remover contato"
+                            style="margin: auto;">&times</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="novalinha">
+                <div class="button-add" id="button-add-contato" title="Adicionar contato">+</div>
+                <p>adicionar contato</p>
+            </div>
+        </fieldset>
+
+        <fieldset id="envio">
+            <legend>layout e envio das propostas</legend>
+            <table>
+                <tr>
+                    <td>
+                        <h2>Forma de envio das propostas:</h2>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="portaloperadora" name="enviopropostas" value="Preenchimento direto no portal da Operadora" checked>
+                            <label for="portaloperadora">Preenchimento direto no portal da Operadora</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="envioemail" name="enviopropostas" value="Envio por e-mail">
+                            <label for="envioemail">Envio por e-mail</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <h2>Layout das propostas:</h2>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="layoutoperadora" name="layoutpropostas" value="Layout padrão da Operadora" checked>
+                            <label for="layoutoperadora">Layout padrão da Operadora</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="layoutadm" name="layoutpropostas" value="Layout sugerido pela Administradora">
+                            <label for="layoutadm">Layout sugerido pela Administradora</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset id="contrato">
+            <legend>contrato de produtos</legend>
+            <table>
+                <tr>
+                    <td>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="assOPERADORA" id="assOPERADORA" value="Não. Previsão de assinatura:">
+                            <label for="assOPERADORA">Assinado pela Operadora?</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="input-wrapper">
+                            <input 
+                            type="text" 
+                            name="assOPERADORAdata" 
+                            id="assOPERADORAdata"
+                            placeholder="Previsão da assinatura (dd/mm/AAAA)"
+                            required>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="assADM" id="assADM" value="Não. Previsão de assinatura:">
+                            <label for="assADM">Assinado pela Administradora?</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="input-wrapper">
+                            <input 
+                            type="text" 
+                            name="assADMdata" 
+                            id="assADMdata"
+                            placeholder="Previsão da assinatura (dd/mm/AAAA)"
+                            required>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset id="outros">
+            <legend>outros</legend>
+            <table>
+                <tr>
+                    <td>
+                        <h2>O logo da operadora foi enviado ao marketing?</h2>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="logooperadora" id="logoenviado" value="Sim" checked>
+                            <label for="logoenviado">Sim</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="logooperadora" id="logonaoenviado" value="Não">
+                            <label for="logonaoenviado">Não</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <h2>O manual da marca foi enviado ao marketing?</h2>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="manualmarca" id="manualenviado" value="Sim" checked>
+                            <label for="manualenviado">Sim</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="manualmarca" id="manualnaoenviado" value="Não">
+                            <label for="manualnaoenviado">Não</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <h2>Possui modelo de declaração de saúde?</h2>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="modelodeclaracao" id="possuimodelodeclaracao" value="Sim" checked>
+                            <label for="possuimodelodeclaracao">Sim</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="modelodeclaracao" id="naopossuimodelodeclaracao" value="Não">
+                            <label for="naopossuimodelodeclaracao">Não</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="100%" style="padding-top: .5rem;">
+                        <h2>Quais dos documentos acima já foram solicitados? Há alguma previsão de envio deles?</h2>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="100%" style="padding-top: .5rem;">
+                        <textarea name="designobs" id="designobs" style="width: 100%; height: 5rem; resize: vertical;" placeholder="Escreva aqui..."></textarea>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>responsável pelas informações</legend>
+            <table class="responsavel" id="responsavel">
+                <tr>
+                    <td>
+                        <div class="input-wrapper">
+                        <label for="nomeresponsavel">Nome completo</label>
+                        <input 
+                        type="text" 
+                        name="nomeresponsavel" 
+                        id="nomeresponsavel"
+                        required >
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="input-wrapper">
+                            <label for="localresponsavel">Setor</label>
+                            <input 
+                            type="text" 
+                            name="localresponsavel" 
+                            id="localresponsavel"
+                            required>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="input-wrapper">
+                            <label for="dataresponsavel">Data</label>
+                            <input 
+                            type="text" 
+                            name="dataresponsavel" 
+                            id="dataresponsavel"
+                            placeholder="dd/mm/AAAA"
+                            required>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <button type="submit" id="previa">prévia</button>
+    </form>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-title"> ALERTA </div>
+          <p id="modal-message"></p>
+          <button id="modal-ok-button">Ok</button>
+        </div>
+    </div>
+      
+      
+    <script src="/js/script.js" defer type="module"></script>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifique os dados</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@200;300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue-300: #64DAF3;
+            --blue-500: #278CCB;
+            --blue-600: #004D8C;
+            --blue-700: #1A2256;
+
+            --gray-500: #d9d9d9;
+            --gray-600: rgb(125, 125, 125);
+            --gray-700: rgb(66, 66, 66);
+
+            --green: #84CC16;
+            --red: #DC2626;
+
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+        
+        ::selection {
+            background-color: var(--blue-500);
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue-500);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--blue-300);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--blue-300);
+            font-weight: 600;
+
+            transition: 150ms ease;
+        }
+
+        a:hover {
+            color: var(--blue-500);
+            letter-spacing: .5px;
+        }
+
+        h1 {
+            font-family: "Montserrat", sans-serif;
+            color: var(--blue-700);
+            font-size: 2rem;
+
+            text-align: center;
+
+            padding: 2rem 1rem 3rem;
+        }
+
+        h2#aviso {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            font-family: "Inter", sans-serif;
+            color: var(--gray-600);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            margin-top: .5rem;
+        }
+
+        h3 {
+            font-family: "Montserrat", sans-serif;
+            color: var(--blue-600);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        p.input {
+            font-family: "Inter", sans-serif;
+            color: var(--gray-600);
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        fieldset legend {
+            text-transform: uppercase;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            text-align: center;
+            color: white;
+            background-color: var(--blue-500);
+            padding: .15rem 0;
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        form {
+            max-width: 95vw;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .fieldset-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+
+        .col-2, .col-3, .col-4, .col-5 {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+        }
+
+        .col-1 {
+            width: 100%;
+
+            text-align: left;
+        }
+
+        .col-2 .input-wrapper {
+            width: 50%;
+        }
+
+        .col-3 .input-wrapper {
+            width: 33%;
+        }
+
+        .neg-wrapper {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+
+        .col-3, .col-2 {
+            gap: 1rem;
+            justify-content: space-between;
+
+            width: 100%;
+        }
+
+        .col-3 .button-remove, .col-4 .button-remove {
+            margin-left: -.5rem;
+            transform: scale(.6);
+        }
+
+        .col-3 .button-remove:hover, .col-4 .button-remove:hover {
+            transform: scale(.85);
+        }
+        
+        .fieldset-wrapper#planos, .fieldset-wrapper#copart, .fieldset-wrapper#carencias {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fxetaria-wrapper {
+            width: 45vw;
+            display: flex;
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        button[type="submit"] {
+            margin-bottom: 2rem;
+            
+            background-color: white;
+            border: 1px solid var(--blue-500);
+            color: var(--blue-500);
+            border-radius: .5rem;
+            
+            box-shadow: 0 0 5px rgba(39, 140, 203, 0.5);
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            font-weight: 300;
+
+            transition: 250ms ease;
+            cursor: pointer;
+
+            max-width: 100%;
+            height: 2.7rem;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--blue-500);
+            color: white;
+            
+            letter-spacing: 3px;
+            font-size: 2rem;
+        }
+
+        /* iPads e tablets */
+        @media (min-width: 500px) {
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+
+                padding: 2rem 0 5rem;
+            }
+
+            fieldset legend {
+                font-size: 2.3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            form {
+                gap: 4rem;
+            }
+
+            label {
+                font-size: 1.45rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .input-wrapper, .fxetaria-wrapper {
+                font-size: 1.4rem;
+            }
+
+            button[type="submit"] {
+                font-size: 2.2rem;
+                height: 3rem;
+            }
+            
+            button[type="submit"]:hover {
+                letter-spacing: 2px;
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 980px) {
+            h1 {
+                font-size: 3.5rem;
+
+                padding: 2rem 0 5rem;
+            }
+
+            fieldset legend {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p, .input-wrapper, .fxetaria-wrapper {
+                font-size: 1.25rem;
+            }
+
+            .fxetaria-wrapper {
+                width: 10vw;
+            }
+
+            button[type="submit"] {
+                font-size: 2.2rem;
+                height: 3rem;
+            }
+            
+            button[type="submit"]:hover {
+                letter-spacing: 2px;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de dados</h1>
+    <h2 id="aviso">O conteúdo abaixo é apenas uma <span style="color: red; font-weight: bold; text-align: center;">prévia</span>. Caso deseje editar as informações, retorne à página anterior.
+    </h2>
+    <form>
+        <fieldset>
+            <div class="fieldset-wrapper">
+                <legend>identificação da operadora</legend>
+                <div class="col-2">
+                    <div class="input-wrapper">
+                        <h3>Razão social</h3>
+                        <p class="input" id="razaosocial">Nome de Empresa Aleatória ME</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>CNPJ</h3>
+                        <p class="input" id="cnpj">00.000.000/0001-00</p>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="input-wrapper">
+                        <h3>Nome Fantasia</h3>
+                        <p class="input" id="nomefantasia">Empresa Aleatória</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Cód. ANS</h3>
+                        <p class="input" id="ans">00.000-00</p>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="input-wrapper">
+                        <h3>Endereço Físico</h3>
+                        <p class="input" id="endereco">Rua Primeiro de Abril - Centro</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: center;">
+                        <h3>Número</h3>
+                        <p class="input" id="numeroendereco">00</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Complemento</h3>
+                        <p class="input" id="complementoendereco">Bloco A - Ap. 000</p>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="input-wrapper">
+                        <h3>Cidade</h3>
+                        <p class="input" id="cidade">Taubaté</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: center;">
+                        <h3>CEP</h3>
+                        <p class="input" id="cep">00000-000</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>UF</h3>
+                        <p class="input" id="estado">SP</p>
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="input-wrapper">
+                        <h3>Endereço Web</h3>
+                        <p class="input" id="site">www.empresaaleatoria.com.br</p>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="input-wrapper">
+                        <h3>Tel. Atendimento</h3>
+                        <p class="input" id="atendimento">(00) 0000-0000</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Tel. Ouvidoria</h3>
+                        <p class="input" id="ouvidoria">(00) 0000-0000</p>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="planos">
+            <legend>planos para comercialização</legend>
+            <div class="fieldset-wrapper" id="planos">
+                <div class="col-3">
+                    <div class="input-wrapper">
+                        <h3>Nome do Plano</h3>
+                        <p class="input" id="nomeplano">PLANO A123 Copart</p>
+                    </div>
+    
+                    <div class="input-wrapper" style="text-align: center;">
+                        <h3>ANS</h3>
+                        <p class="input" id="ansplano">00.000-00</p>
+                    </div>
+    
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Tipo de Contratação</h3>
+                        <p class="input" id="contratoplano">Coletivo por adesão</p>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="input-wrapper">
+                        <h3>Cobertura</h3>
+                        <p class="input" id="coberturaplano">Ambulatorial</p>
+                    </div>
+    
+                    <div class="input-wrapper" style="text-align: center;">
+                        <h3>Abrangência</h3>
+                        <p class="input" id="abrangenciaplano">Nacional</p>
+                    </div>
+    
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Acomodação</h3>
+                        <p class="input" id="acomodacaoplano">Enfermaria</p>
+                    </div>
+                </div>
+
+                <h2>Coparticipação</h2>
+                <div class="col-3">
+                    <div class="input-wrapper">
+                        <h3>% Copay</h3>
+                        <p class="input" id="copay">1,98</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: center;">
+                        <h3>Limite (R$)</h3>
+                        <p class="input" id="limite">75,98</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Franquia (R$)</h3>
+                        <p class="input" id="franquia">459,51</p>
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="input-wrapper">
+                        <h3>Regras</h3>
+                        <p class="input" id="regrascopay">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id odio ligula. Aenean luctus sodales ultricies. Praesent ac elit maximus, interdum ante quis, malesuada nisi.</p>
+                    </div>
+                </div>
+
+                <h2>Carências</h2>
+                <div class="col-2">
+                    <div class="input-wrapper">
+                        <h3>Limite (dias)</h3>
+                        <p class="input" id="carencialimite">30 dias</p>
+                    </div>
+
+                    <div class="input-wrapper" style="text-align: right;">
+                        <h3>Descrição dos procedimentos</h3>
+                        <p class="input" id="carenciadescricao">Exames e procedimentos terapêuticos ambulatoriais básicos.</p>
+                    </div>
+                </div>
+                    
+                <div class="col-1">
+                    <div class="input-wrapper">
+                        <h3>Condições de redução</h3>
+                        <p class="input" id="reducaoregra">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id odio ligula.</p>
+                    </div>
+                </div>
+
+                <h2>tabela de preços</h2>
+                <div class="fxetaria-wrapper">
+                    <h3>00-18</h3>
+                    <p class="input" id="fxetaria1">218,25</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>19-23</h3>
+                    <p class="input" id="fxetaria2">296,38</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>24-28</h3>
+                    <p class="input" id="fxetaria3">347,93</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>29-33</h3>
+                    <p class="input" id="fxetaria4">347,93</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>34-38</h3>
+                    <p class="input" id="fxetaria5">388,64</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>39-43</h3>
+                    <p class="input" id="fxetaria6">388,64</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>44-48</h3>
+                    <p class="input" id="fxetaria7">536,71</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>49-53</h3>
+                    <p class="input" id="fxetaria8">640,83</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>54-59</h3>
+                    <p class="input" id="fxetaria9">921,51</p>
+                </div>
+                <div class="fxetaria-wrapper">
+                    <h3>59+</h3>
+                    <p class="input" id="fxetaria10">1306,71</p>
+                </div>
+        </fieldset>
+
+        <fieldset id="dependentes">
+            <legend>dependentes</legend>
+            <div class="col-3">
+                <div class="input-wrapper">
+                    <h3>Parentesco</h3>
+                    <p class="input" id="parentesco">Netos</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: center;">
+                    <h3>Condições</h3>
+                    <p class="input" id="condicoesdependentes">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+    
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>Documentos necessários</h3>
+                    <p class="input" id="documentosdependentes">RG, CPF e CNH</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="entidades">
+            <legend>Entidades aprovadas</legend>
+            <div class="col-3">
+                <div class="input-wrapper">
+                    <h3>Nome</h3>
+                    <p class="input" id="nomeentidade">INFAP</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: center;">
+                    <h3>Descrição</h3>
+                    <p class="input" id="descricaoentidade">Instituto Nacional das Atividades dos Profissionais Liberais</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>Público-alvo</h3>
+                    <p class="input" id="publicoentidade">Guaxinins</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="negociacoes">
+            <legend>negociações aprovadas</legend>
+            <div class="neg-wrapper">
+                <h3>Spread:</h3>
+                <p class="input" id="negspread">Sim</p>
+            </div>
+            <div class="neg-wrapper">
+                <h3>Comissão:</h3>
+                <p class="input" id="negcomissao">Não</p>
+            </div>
+            <div class="neg-wrapper">
+                <h3>Agenciamento:</h3>
+                <p class="input" id="negagenciamento">Sim</p>
+            </div>
+            <div class="neg-wrapper">
+                <h3>Taxa Administração:</h3>
+                <p class="input" id="negtaxaadm">Não</p>
+            </div>
+            <div class="neg-wrapper">
+                <h3>Outras:</h3>
+                <p class="input" id="negoutro">Não</p>
+            </div>
+            <div class="col-1"><br>
+                <h3>Observações</h3>
+                <p class="input" id="negobs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id odio ligula.</p>
+            </div>
+        </fieldset>
+        
+        <fieldset id="vigencias">
+            <legend>vigências</legend>
+
+            <div class="col-3">
+                <div class="input-wrapper">
+                    <h3>Vigência contratada</h3>
+                    <p class="input" id="nomevigencia">Astolfo</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: center;">
+                    <h3>Novas vendas</h3>
+                    <p class="input" id="newsales">01/01/2001</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>Cancelamento</h3>
+                    <p class="input" id="cancel">01/01/2001</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="documentos">
+            <legend>documentação</legend>
+
+            <div class="neg-wrapper">
+                <h3>Forma de envio das propostas:</h3>
+                <p class="input" id="formadeenvio">E-mail</p>
+            </div>
+
+            <h2>Sobre a documentação para análise de propostas:</h2>
+
+            <div class="neg-wrapper">
+                <h3>Foi enviada para a Operadora em PDF?</h3>
+                <p class="input" id="operadoraPDF">Sim</p>
+            </div>
+
+            <div class="neg-wrapper">
+                <h3>Está arquivada na Administradora?</h3>
+                <p class="input" id="arquivoadm">Sim</p>
+            </div>
+        </fieldset>
+
+        <fieldset id="contact">
+            <legend>contatos da operadora</legend>
+            <div class="col-4">
+                <div class="input-wrapper">
+                    <h3>Nome</h3>
+                    <p class="input" id="nomecontato">Gerisvaldo Luiz Ferreira</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>E-mail</h3>
+                    <p class="input" id="emailcontato">gerisvaldo@empresaaleatoria.com.br</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-wrapper">
+                    <h3>Tel./WhatsApp</h3>
+                    <p class="input" id="telcontato">(00) 0000-0000</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>Cargo</h3>
+                    <p class="input" id="rolecontato">Gerisvaldo-gerisvaldo</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="contrato">
+            <legend>contrato de produtos</legend>
+
+            <div class="neg-wrapper">
+                <h3>Assinado pela Operadora?</h3>
+                <p class="input" id="assoperadora">Sim, em 01/01/2001</p>
+            </div>
+
+            <div class="neg-wrapper">
+                <h3>Assinado pela Administradora?</h3>
+                <p class="input" id="assadm">Não, previsão para 01/01/2001</p>
+            </div>
+        </fieldset>
+
+        <fieldset id="outros">
+            <legend>outros</legend>
+
+            <div class="neg-wrapper">
+                <h3>O logo da operadora foi enviado ao marketing?</h3>
+                <p class="input" id="logomkt">Sim</p>
+            </div>
+
+            <div class="neg-wrapper">
+                <h3>Possui modelo de declaração de saúde?</h3>
+                <p class="input" id="declaracaosaude">Não</p>
+            </div>
+        </fieldset>
+
+        <fieldset id="anexo">
+            <legend>anexar arquivos</legend>
+            <div class="col-3">
+                <div class="input-wrapper">
+                    <h3>Nome do arquivo</h3>
+                    <p class="input" id="nomeanexo">ANEXO.PDF</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: center;">
+                    <h3>Link (drive)</h3>
+                    <p class="input" id="linkanexo"><a href="">link</a></p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>Observações</h3>
+                    <p class="input" id="descricaoanexo">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="responsavel">
+            <legend>responsável pelas informações</legend>
+            <div class="col-3">
+                <div class="input-wrapper">
+                    <h3>Nome</h3>
+                    <p class="input" id="nomeresponsavel">Gerisvaldo Luiz Ferreira</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: center;">
+                    <h3>Local</h3>
+                    <p class="input" id="localresponsavel">Macapá</p>
+                </div>
+
+                <div class="input-wrapper" style="text-align: right;">
+                    <h3>Data</h3>
+                    <p class="input" id="dataresponsavel">01/01/2001</p>
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" onclick="gerarPDF()">gerar pdf</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

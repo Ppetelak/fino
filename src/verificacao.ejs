@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de dados</title>
+    <link rel="stylesheet" href="/css/verificacao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/css/verificacao.css"> -->
+</head>
+
+<body>
+    <header>
+        <h1>Verificação de dados</h1>
+        <h2 id="aviso">O conteúdo abaixo é apenas uma <span style="color: red; font-weight: bold; text-align: center;">prévia</span>. Caso deseje editar as informações, feche está página e retorne à página anterior.
+        </h2>
+    </header>
+
+    <main>
+        <form>
+            <fieldset>
+                <div id="dadosiniciais">
+                    <div class="input-wrapper">
+                        <h3>Administradora</h3>
+                        <p class="input" id="adm">
+                        </p>
+                        <img src="<%= dadosOperadora.administradora %>" width="50%">
+                    </div>
+                    <div class="input-wrapper">
+                        <h3>Estipulador</h3>
+                        <p class="input" id="adm">
+                            <%= dadosOperadora.modelo %>
+                        </p>
+                    </div>
+                </div>
+                <div class="fieldset-wrapper">
+                    <legend>identificação da operadora</legend>
+                    <table id="operadora">
+                        <tr>
+                            <th>
+                                <h3>Razão social</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="razaosocial"><%= dadosOperadora.razaosocial %></p>
+                            </td>
+                            <th>
+                                <h3>Endereço físico</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="endereco"><%= dadosOperadora.endereco %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>CNPJ</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="cnpj"><%= dadosOperadora.cnpj %></p>
+                            </td>
+                            <th>
+                                <h3>Número</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="numeroendereco"><%= dadosOperadora.numeroendereco %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Nome Fantasia</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="nomefantasia"><%= dadosOperadora.nomefantasia %></p>
+                            </td>
+                            <th>
+                                <h3>Complemento</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="complementoendereco"><%= dadosOperadora.complementoendereco %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Cód. ANS</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="ans"><%= dadosOperadora.ans %></p>
+                            </td>
+                            <th>
+                                <h3>CEP</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="cep"><%= dadosOperadora.cep %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Tel. Ouvidoria</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="ouvidoria"><%= dadosOperadora.ouvidoria %></p>
+                            </td>
+                            <th>
+                                <h3>Cidade</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="cidade"><%= dadosOperadora.cidade %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Tel. Atendimento</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="atendimento"><%= dadosOperadora.atendimento %></p>
+                            </td>
+                            <th>
+                                <h3>Estado</h3>
+                            </th>
+                            <td>
+                                <p class="input" id="estado"><%= dadosOperadora.estado %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Endereço web</h3>
+                            </th>
+                            <td colspan="3">
+                                <p class="input" id="site">
+                                    <a href="<%= dadosOperadora.site %>"><%= dadosOperadora.site %></a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>planos para comercialização</legend>
+                <% for (var i = 0; i < dadosPlanos.length; i++) { %>
+            
+                <table class="plano">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="100%" class="plano">
+                                <%= dadosPlanos[i].nomeplano %> <%= dadosPlanos[i].cooparticipacao %>
+                            </th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <tr>
+                            <th scope="col">
+                                ANS
+                            </th>
+                            <th scope="col">
+                                Contratação
+                            </th>
+                            <th scope="col" colspan="2">
+                                Cobertura
+                            </th>
+                            <th scope="col" colspan="2">
+                                Abrangência
+                            </th>
+                            <th scope="col">
+                                Acomodação
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><p class="input" id="ansplano"><%= dadosPlanos[i].ansplano %></p></td>
+                            <td><p class="input" id="contratoplano"><%= dadosPlanos[i].contratoplano %></p></td>
+                            <td colspan="2"><p class="input" id="coberturaplano"><%= dadosPlanos[i].coberturaplano %></p></td>
+                            <td colspan="2"><p class="input" id="abrangenciaplano"><%= dadosPlanos[i].abrangenciaplano %></p></td>
+                            <td><p class="input" id="acomodacaoplano"><%= dadosPlanos[i].acomodacaoplano %></p></td>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="100%">
+                                Área de Abrangência
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="100%">
+                                <p class="input">
+                                    <%= dadosPlanos[i].areaabrangencia %>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <th scope="col" colspan="100%" class="secao">
+                                    procedimentos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>% Coparticipação</th>
+                                <th>Limite Coparticipação</th>
+                                <th>Franquia Coparticipação</th>
+                                <th>Limite Carência</th>
+                                <th>Redução de Carências</th>
+                                <th>Congêneres</th>
+                            </tr>
+                            <% for (var j = 0; j < dadosProcedimentos[i].length; j++) { %>
+                            <tr>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentodescricao %></p></td>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentocopay %></p></td>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentolimitecarencia %></p></td>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentoreducaocarencia %></p></td>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentolimitecarencia %></p></td>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentoreducaocarencia %></p></td>
+                                <td><p class="input"><%= dadosProcedimentos[i][j].procedimentocongenere %></p></td>
+                            </tr>
+                            <% } %>
+                        <tr>
+                            <th scope="col" colspan="100%" class="secao">
+                                dependentes
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="1">Parentesco</th>
+                            <th scope="col" colspan="3">Condições</th>
+                            <th scope="col" colspan="3">Documentos</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="1">Cônjuges</th>
+                            <td colspan="3">
+                                <p class="input" id="condicoesdependentes">
+                                    <%= dadosPlanos[i].condicoesdependentes_conjuge %>
+                                </p>
+                            </td>
+                            <td colspan="3">
+                                <p class="input" id="documentosdependentes">
+                                    <%= dadosPlanos[i].documentosdependentes_conjuge %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="1">Filhos</th>
+                            <td colspan="3">
+                                <p class="input" id="condicoesdependentes">
+                                    <%= dadosPlanos[i].condicoesdependentes_filhos %>
+                                </p>
+                            </td>
+                            <td colspan="3">
+                                <p class="input" id="documentosdependentes">
+                                    <%= dadosPlanos[i].documentosdependentes_filhos %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="1">Netos</th>
+                            <td colspan="3">
+                                <p class="input" id="condicoesdependentes">
+                                    <%= dadosPlanos[i].condicoesdependentes_netos %>
+                                </p>
+                            </td>
+                            <td colspan="3">
+                                <p class="input" id="documentosdependentes">
+                                    <%= dadosPlanos[i].documentosdependentes_netos %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="1">Pais</th>
+                            <td colspan="3">
+                                <p class="input" id="condicoesdependentes">
+                                    <%= dadosPlanos[i].condicoesdependentes_pais %>
+                                </p>
+                            </td>
+                            <td colspan="3">
+                                <p class="input" id="documentosdependentes">
+                                    <%= dadosPlanos[i].documentosdependentes_pais %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="1">Outros</th>
+                            <td colspan="3">
+                                <p class="input" id="condicoesdependentes">
+                                    <%= dadosPlanos[i].condicoesdependentes_outros %>
+                                </p>
+                            </td>
+                            <td colspan="3">
+                                <p class="input" id="documentosdependentes">
+                                    <%= dadosPlanos[i].documentosdependentes_outros %>
+                                </p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="col" colspan="100%" class="secao">
+                                tabelas de preços
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3" style="background-color: #64748B; color: white;">
+                                ANS <%= dadosPlanos[i].ansplano %>
+                            </th>
+                            <th scope="col" colspan="4" style="background-color: #64748B; color: white;">
+                                <%= dadosPlanos[i].nomeplano %><br>
+                                <%= dadosPlanos[i].acomodacaoplano %>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3">Faixa etária</th>
+                            <th scope="col" colspan="2">Valor NET (R$)</th>
+                            <th scope="col" colspan="2" class="comercial">Valor Comercial (R$)</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">00-18</th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria1 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria1spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">19-23</th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria2 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria2spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">24-28
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria3 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria3spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">29-33
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria4 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria4spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">34-38
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria5 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria5spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">39-43
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria6 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria6spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">44-48
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria7 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input" class="comercial">R$ <%= dadosPlanos[i].fxetaria7spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">
+                                49-53
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria8 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria8spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">
+                                54-59
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria9 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria9spread %></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3">
+                                59+
+                            </th>
+                            <td colspan="2">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria10 %></p>
+                            </td>
+                            <td colspan="2" class="comercial">
+                                <p class="input">R$ <%= dadosPlanos[i].fxetaria10spread %></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="col" colspan="100%" class="secao">
+                                Observações sobre o plano
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="100%">
+                                <p class="input">
+                                    <%= dadosPlanos[i].planoobs %>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>                    
+                </table>
+                <% } %>
+            </fieldset>
+
+
+
+            <fieldset>
+                <legend>entidades aprovadas</legend>
+                    <table class="tabsimples">
+                        <thead>
+                            <tr>
+                                <th><h3>Nome</h3></th>
+                                <th><h3>Descrição</h3></th>
+                                <th><h3>Público-alvo</h3></th>
+                                <th><h3>Documentos</h3></th>
+                                <th><h3>Valor associativo</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var i = 0; i < dadosEntidades.length; i++) { %>
+                            <tr>
+                                
+                                <td><p class="input"><%= dadosEntidades[i].nomeentidade %></p></td>
+                                <td><p class="input"><%= dadosEntidades[i].descricaoentidade %></p></td>
+                                <td><p class="input"><%= dadosEntidades[i].publicoentidade %></p></td>
+                                <td><p class="input"><%= dadosEntidades[i].documentosentidade %></p></td>
+                                <td><p class="input"><%= dadosEntidades[i].taxaentidade %></p></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>condições comerciais</legend>
+                <table class="tabsimples">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="65%"><h3>Negociações aprovadas</h3></th>
+                            <th scope="col" colspan="35%"><h3>Valor (%)</h3></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" colspan="30%"><h3>Spread</h3></th>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.negspread %>
+                            </p></td>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.spreadvalor %>
+                            </p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="30%"><h3>Comissão</h3></th>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.negcomissao %>
+                            </p></td>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.comissaovalor %>
+                            </p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="30%"><h3>Agenciamento</h3></th>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.negagenciamento %>
+                            </p></td>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.agenciamentovalor %>
+                            </p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="30%"><h3>Outra</h3></th>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.negoutro %>
+                            </p></td>
+                            <td colspan="35%"><p class="input"><%= dadosComerciais.negoutrovalor %>
+                            </p></td>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="100%"><h3>Observações</h3></th>
+                        </tr>
+                        <tr>
+                            <td colspan="100%"><p class="input"><%= dadosComerciais.negobs %>
+                                
+                            </p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>vigências</legend>
+                    <table class="tabsimples">
+                        <thead>
+                            <tr>
+                                <th><h3>Início da Vigência</h3></th>
+                                <th><h3>Movimentação</h3></th>
+                                <th><h3>Data do faturamento</h3></th>
+                                <th><h3>Aniversário do contrato</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var i = 0; i < dadosVigencias.length; i++) { %>
+                            <tr>
+                                <td><p class="input"><%= dadosVigencias[i].fechamentodavenda %></p></td>
+                                <td><p class="input"><%= dadosVigencias[i].cancelamento %></p></td>
+                                <td><p class="input"><%= dadosVigencias[i].faturamento %></p></td>
+                                <td><p class="input"><%= dadosVigencias[i].aniversariocontrato %></p></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>contrato de produtos</legend>
+
+                <table class="tabsimples">
+                    <tr>
+                        <th scope="row"><h3>Assinado pela Operadora?</h3></th>
+                        <td><p class="input"><%= dadosGerais.assOPERADORA %> <%= dadosGerais.assOPERADORAdata %></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h3>Assinado pela Administradora?</h3></th>
+                        <td><p class="input"><%= dadosGerais.assADM %> <%= dadosGerais.assADMdata %></p></td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <fieldset>
+                <legend>documentação, layout e envio</legend>
+                
+                <table class="tabsimples">
+                    <tr>
+                        <th scope="row"><h3>A operadora requisitou a documentação para análise de propostas?</h3></th>
+                        <td><p class="input"><%= dadosGerais.docoperadora %></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h3>
+                            Forma de envio das propostas:</h3></th>
+                        <td><p class="input"><%= dadosGerais.enviopropostas %></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h3>
+                            Layout das propostas:</h3></th>
+                        <td><p class="input"><%= dadosGerais.layoutpropostas %></p></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>design</legend>
+
+                <table class="tabsimples">
+                    <tr>
+                        <th scope="row" colspan="50%">
+                            <h3>
+                                O logo da operadora foi enviado ao marketing?</h3>
+                        </th>
+                        <td colspan="50%"><p class="input"><%= dadosGerais.logooperadora %></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" colspan="50%">
+                            <h3>
+                                O manual da marca foi enviado ao marketing?</h3>
+                        </th>
+                        <td colspan="50%"><p class="input"><%= dadosGerais.manualmarca %></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" colspan="50%">
+                            <h3>
+                                Possui modelo de declaração de saúde?</h3>
+                        </th>
+                        <td colspan="50%"><p class="input"><%= dadosGerais.modelodeclaracao %></p></td>
+                    </tr>
+                    <tr>
+                        <th colspan="100%" scope="col">
+                            <h3>Observações</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="100%" style="padding-top: .5rem;">
+                            <p class="input"><%= dadosGerais.designobs %></p></td>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>contatos da operadora</legend>
+
+                    <table class="tabsimples">
+                        <thead>
+                            <tr>
+                                <th><h3>Nome completo</h3></th>
+                                <th><h3>E-mail</h3></th>
+                                <th><h3>Tel./Whatsapp</h3></th>
+                                <th><h3>Cargo</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var i = 0; i < dadosContatos.length; i++) { %>
+                            <tr>
+                                <td><p class="input"><%= dadosContatos[i].nomecontato %></p></td>
+                                <td><p class="input">
+                                    <a href="mailto:<%= dadosContatos[i].emailcontato %>"><%= dadosContatos[i].emailcontato %></a></p></td>
+                                <td><p class="input"><%= dadosContatos[i].telcontato %></p></td>
+                                <td><p class="input"><%= dadosContatos[i].rolecontato %></p></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>responsável pelas informações</legend>
+
+                <table class="tabsimples">
+                    <thead>
+                        <tr>
+                            <th><h3>Nome completo</h3></th>
+                            <th><h3>Setor</h3></th>
+                            <th><h3>Data</h3></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><p class="input"><%= dadosOperadora.nomeresponsavel %></p></td>
+                            <td><p class="input"><%= dadosOperadora.localresponsavel %></p></td>
+                            <td><p class="input"><%= dadosOperadora.dataresponsavel %></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+        </form>
+    </main>
+
+    <footer>
+        <a href="/criarpdf" target="_blank"><button type="submit" id="btnGerarPdf">gerar pdf <ion-icon name="document-text-outline"></ion-icon></button></a>
+</footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+

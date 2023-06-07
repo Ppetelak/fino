@@ -1,0 +1,25 @@
+<% dadosProcedimentos.forEach(dadosProcedimentos => { %>
+    <tr>
+        <th scope="col" colspan="100%" class="secao">
+            procedimentos
+        </th>
+    </tr>
+    <tr>
+        <th>Descrição</th>
+        <th>% Copay</th>
+        <th>Limite Copay</th>
+        <th>Franquia Copay</th>
+        <th>Limite Carência</th>
+        <th>Redução de Carências</th>
+        <th>Congêneres</th>
+    </tr>
+    <tr>
+        <td><p class="input"><%= dadosProcedimentos.procedimentodescricao %></p></td>
+        <td><p class="input"><%= dadosProcedimentos.procedimentocopay %></p></td>
+        <td><p class="input"><%= dadosProcedimentos.procedimentolimitecopay %></p></td>
+        <td><p class="input"><%= dadosProcedimentos.procedimentofranquiacopay %></p></td>
+        <td><p class="input"><%= dadosProcedimentos.procedimentolimitecarencia %></p></td>
+        <td><p class="input"><%= dadosProcedimentos.procedimentoreducaocarencia %></p></td>
+        <td><p class="input"><%= dadosProcedimentos.procedimentocongenere %></p></td>
+    </tr>
+<% }); %>

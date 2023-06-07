@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Lista</title>
+
+</head>
+<body>
+    <div>
+      <% var groupSize = 1; // Define o tamanho do grupo (número de índices por tabela) %>
+
+<% for (var j = 0; j < Math.ceil(dados.length / groupSize); j++) { %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome do Plano</th>
+        <th>Ans Plano</th>
+        <th>Contrato</th>
+        <!-- Coloque aqui os cabeçalhos adicionais das colunas -->
+      </tr>
+    </thead>
+    <tbody>
+    <% var startIndex = j * groupSize; %>
+    <% var endIndex = (j + 1) * groupSize; %>
+    <% for (var i = startIndex; i < endIndex && i < dados.length; i++) { %>
+      <tr>
+        <td><%= dados[i].nomeplano %></td>
+        <td><%= dados[i].ansplano %></td>
+        <td><%= dados[i].contratoplano %></td>
+        <!-- Coloque aqui as células de dados adicionais -->
+      </tr>
+    <% } %>
+    </tbody>
+  </table>
+<% } %>
+
+<!--         <table class="table">
+            <thead>
+              <tr>
+                <th>Nome do Plano</th>
+                <th>Ans Plano</th>
+                <th>Contrato</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% for (let i = 0; i < dados.length; i++) { %>
+                <tr>
+                  <td><%= dados[i].nomeplano %></td>
+                <td><%= dados[i].ansplano %></td>
+                <td><%= dados[i].contratoplano %></td>
+                <td><%= dados[i].coberturaplano %></td>
+                <td><%= dados[i].abrangenciaplano %></td>
+                <td><%= dados[i].acomodacaoplano %></td>
+                <td><%= dados[i].condicoesdependentes_conjuge %></td>
+                <td><%= dados[i].documentosdependentes_conjuge %></td>
+                <td><%= dados[i].condicoesdependentes_filhos %></td>
+                <td><%= dados[i].documentosdependentes_filhos %></td>
+                <td><%= dados[i].condicoesdependentes_netos %></td>
+                <td><%= dados[i].documentosdependentes_netos %></td>
+                <td><%= dados[i].condicoesdependentes_pais %></td>
+                <td><%= dados[i].documentosdependentes_pais %></td>
+                <td><%= dados[i].condicoesdependentes_outros %></td>
+                <td><%= dados[i].documentosdependentes_outros %></td>
+                <td><%= dados[i].fxetaria1 %></td>
+                <td><%= dados[i].fxetaria2 %></td>
+                <td><%= dados[i].fxetaria3 %></td>
+                <td><%= dados[i].fxetaria4 %></td>
+                <td><%= dados[i].fxetaria5 %></td>
+                <td><%= dados[i].fxetaria6 %></td>
+                <td><%= dados[i].fxetaria7 %></td>
+                <td><%= dados[i].fxetaria8 %></td>
+                <td><%= dados[i].fxetaria9 %></td>
+                <td><%= dados[i].fxetaria10 %></td>
+                <td><%= dados[i].planoobs %></td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table> -->
+    </div>
+
+</body>
+<footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</footer>
+</html>

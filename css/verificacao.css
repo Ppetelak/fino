@@ -1,0 +1,398 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-300: #64DAF3;
+    --blue-500: #278CCB;
+    --blue-600: #004D8C;
+    --blue-700: #1A2256;
+    --orange-100: #FFEDD5;
+    --orange-200: #FED7AA;
+    --orange-300: #FDBA74;
+    --orange-600: #EA580C;
+    --orange-700: #C2410C;
+
+    --gray-500: #d9d9d9;
+    --gray-600: rgb(125, 125, 125);
+    --gray-700: rgb(66, 66, 66);
+
+    --green: #84CC16;
+    --red: #DC2626;
+
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--blue-500);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-500);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-300);
+}
+
+body {
+    width: min(95vw, 120rem);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue-300);
+    font-weight: 600;
+
+    transition: 150ms ease;
+}
+
+a:hover {
+    color: var(--blue-500);
+    letter-spacing: .5px;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: var(--blue-700);
+    font-size: 2rem;
+
+    text-align: center;
+
+    padding: 2rem 1rem 3rem;
+}
+
+h2#aviso {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+h2 {
+    font-family: "Inter", sans-serif;
+    color: var(--gray-600);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin-top: .5rem;
+}
+
+#dadosiniciais {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+
+#dadosiniciais .input-wrapper {
+    align-items: end;
+}
+
+table#operadora {
+    text-align: left;
+}
+
+table.plano {
+    width: 100%;
+    border-collapse: collapse;
+
+    margin-bottom: 3vh;
+}
+
+table.plano th, table.plano td {
+    text-align: center;
+}
+
+table.plano thead th {
+    padding: .1rem 0;
+
+    border-radius: .5rem .5rem 0 0;
+
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 500;
+    background-color: var(--blue-600);
+    color: white;
+}
+
+table.plano tbody {
+    box-shadow: 0 5px 5px rgba(39, 140, 203, 0.25);
+}
+
+table.plano tbody th:not(th.secao,th.comercial), table.tabsimples th {
+    background-color: rgb(234, 239, 243);
+}
+
+table.plano tbody th, tbody td {
+    font-size: 1.1rem;
+}
+
+table.plano th.secao {
+    background-color: #475569;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    margin: 1rem 0 .5rem;
+}
+
+table.tabsimples {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    margin-bottom: 3vh;
+}
+
+table.tabsimples th {
+    padding: .1rem 0;
+}
+
+table.tabsimples tr:nth-child(odd) th, table.plano tbody tr:nth-child(odd) th:not(th.secao,th.comercial) {
+    background-color: rgb(211, 216, 219);
+}
+
+table.tabsimples td {
+    padding: .5rem 0;
+}
+
+h3, th {
+    font-family: "Montserrat", sans-serif;
+    color: var(--blue-600);
+    font-weight: 600;
+}
+
+th.comercial {
+    color: white;
+    background-color: var(--orange-600);
+}
+
+td.comercial p {
+    color: var(--orange-700);
+    font-weight: bold;
+}
+
+tr td.comercial {
+    background-color: var(--orange-100);
+}
+
+tr:nth-child(odd) td.comercial {
+    background-color: var(--orange-200);
+}
+
+p.input {
+    font-family: "Inter", sans-serif;
+    color: var(--gray-600);
+
+    font-size: 1.1rem;
+}
+
+fieldset {
+    border: none;
+    padding-bottom: 2vh;
+}
+
+fieldset legend {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    background-color: var(--blue-500);
+    padding: .15rem 0;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.fxetaria-wrapper {
+    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+button[type="submit"] {
+    margin-bottom: 2rem;
+    
+    background-color: white;
+    border: 1px solid var(--blue-500);
+    color: var(--blue-500);
+    border-radius: .5rem;
+    
+    box-shadow: 0 0 5px rgba(39, 140, 203, 0.5);
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    transition: 250ms ease;
+    cursor: pointer;
+
+    width: 100%;
+    height: 2.7rem;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+}
+
+button[type="submit"] ion-icon {
+    font-size: 1.8rem;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--blue-500);
+    color: white;
+    
+    letter-spacing: 3px;
+    font-size: 2rem;
+}
+
+/* iPads e tablets */
+@media (min-width: 500px) {
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+
+        padding: 2rem 0 5rem;
+    }
+
+    fieldset legend {
+        font-size: 2.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    form {
+        gap: 4rem;
+    }
+
+    label {
+        font-size: 1.45rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-wrapper, .fxetaria-wrapper {
+        font-size: 1.4rem;
+    }
+
+    button[type="submit"] {
+        font-size: 2.2rem;
+        height: 3rem;
+    }
+    
+    button[type="submit"]:hover {
+        letter-spacing: 2px;
+        font-size: 2.5rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 980px) {
+    h1 {
+        font-size: 3.5rem;
+
+        padding: 2rem 0 5rem;
+    }
+
+    fieldset legend {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p, .input-wrapper, .fxetaria-wrapper {
+        font-size: 1.25rem;
+    }
+
+    .fxetaria-wrapper {
+        width: 10vw;
+    }
+
+    button[type="submit"] {
+        font-size: 2.2rem;
+        height: 3rem;
+
+        gap: 1rem;
+    }
+    
+    button[type="submit"]:hover {
+        letter-spacing: 2px;
+        font-size: 2.5rem;
+    }
+
+    
+    button[type="submit"] ion-icon {
+        font-size: 2.1rem;
+    }
+    
+    table.plano thead th {
+        padding: .2rem 0;
+        border-radius: 1rem 1rem 0 0;
+        font-size: 1.6rem;
+    }
+    
+    table.plano th.secao {
+        font-size: 1.65rem;
+    }
+
+    table.plano tbody th {
+        padding: .15rem 0;
+    }
+
+    table.plano tbody td {
+        padding: .25rem 0;
+    }
+    
+    table.tabsimples {
+        text-align: center;
+    
+        margin-bottom: 3vh;
+    }
+
+    p.input {
+        font-size: 1.2rem;
+    }
+    
+    table.plano tbody th, tbody td {
+        font-size: 1.2rem;
+    }
+}
